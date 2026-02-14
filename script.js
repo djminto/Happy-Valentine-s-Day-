@@ -183,9 +183,14 @@ async function ensureYouTubePlayer() {
         playlist: "75-Com9Bo_s",
       },
       events: {
-        onReady: () => {
+        onReady: (event) => {
           ytReady = true;
-          ytPlayer.setVolume(60);
+          ytPlayer = event?.target || ytPlayer;
+
+          if (ytPlayer && typeof ytPlayer.setVolume === "function") {
+            ytPlayer.setVolume(60);
+          }
+
           resolve(ytPlayer);
         },
         onError: () => {
@@ -202,8 +207,14 @@ async function startMusic() {
     return;
   }
 
-  player.unMute();
-  player.playVideo();
+  if (player && typeof player.unMute === "function") {
+    player.unMute();
+  }
+
+  if (player && typeof player.playVideo === "function") {
+    player.playVideo();
+  }
+
   musicStarted = true;
   musicPaused = false;
   setMusicUi(true);
