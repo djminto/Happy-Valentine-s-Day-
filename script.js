@@ -280,6 +280,8 @@ function openSurprise() {
 
   videoHelp.hidden = true;
   loveVideo.load();
+  loveVideo.muted = true;
+  loveVideo.volume = 0;
   loveVideo.currentTime = 0;
   loveVideo.play().catch(() => {
     videoHelp.hidden = false;
@@ -295,6 +297,13 @@ function closeSurprise() {
 
 loveVideo.addEventListener("error", () => {
   videoHelp.hidden = false;
+});
+
+loveVideo.addEventListener("volumechange", () => {
+  if (!loveVideo.muted || loveVideo.volume > 0) {
+    loveVideo.muted = true;
+    loveVideo.volume = 0;
+  }
 });
 
 ["pointerdown", "mouseenter", "touchstart"].forEach((eventName) => {
