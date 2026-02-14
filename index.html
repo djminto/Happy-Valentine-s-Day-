@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Valentine's Day ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="heart-field" id="heartField" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <section class="card screen active" id="proposalScreen" aria-live="polite">
+        <p class="eyebrow">A special question, just for you 💌</p>
+        <h1>Will you be my Valentine, Mahalia? 💖</h1>
+        <p class="hero-note">If love had a favorite person, it would be you.</p>
+
+        <div class="gif-row" aria-hidden="true">
+          <img
+            src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif"
+            alt="Valentine heart animation"
+          />
+          <img
+            src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+            alt="Cute real couple love gif"
+          />
+          <img
+            src="https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif"
+            alt="Romantic roses and hearts gif"
+          />
+        </div>
+
+        <p class="subtext" id="noMessage">Choose wisely, my love 🥰</p>
+
+        <div class="button-zone" id="buttonZone">
+          <button class="btn btn-yes" id="yesBtn" type="button">Yes 💘</button>
+          <button class="btn btn-no" id="noBtn" type="button">No 🙈</button>
+        </div>
+      </section>
+
+      <section class="card screen" id="giftScreen" aria-live="polite">
+        <p class="eyebrow">You picked love 💞</p>
+        <h2>Tap the heart gift</h2>
+        <p class="subtext">Open me for a special prize 🎁</p>
+
+        <button class="heart-gift" id="giftBtn" type="button" aria-label="Open special gift">
+          <span>❤️</span>
+        </button>
+      </section>
+    </main>
+
+    <section class="modal" id="surpriseModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button id="closeModalBtn" class="close-btn" type="button" aria-label="Close">×</button>
+        <h2 class="modal-title">Happy Valentine's Day, My Love 💝</h2>
+
+        <video id="loveVideo" controls playsinline preload="metadata">
+          <source src="Image/Mahalia.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p id="videoHelp" class="video-help" hidden>
+          If the video doesn’t start automatically, press play. If it still doesn’t load, confirm the file exists as
+          <strong>Image/Mahalia.mp4</strong>.
+        </p>
+
+        <article class="love-letter">
+          <p class="salutation">Dear Mahalia Z. M. M. (My beautiful cute mamazita) 💌🌹💖</p>
+          <p>
+            Happy Valentine’s Day, my love 💘🌸✨ Words can never fully describe what you mean to me, but today I want you
+            to feel every part of my heart 💓 You are not just someone I love—you are my soft place to land, my comfort,
+            my smile, and my sweetest blessing 🫶🏽💕
+          </p>
+          <p>
+            March 30th, 2025 at OSAY will forever stay in my heart 🗓️❤️ Seeing you again after 2 years felt like destiny,
+            like my heart found home again 🏡💞 Then after just 2 weeks of talking, we made it official on May 3rd, 2025
+            💍 and from that day until now, my heart has only chosen you—again and again 💗💗
+          </p>
+          <p>
+            Thank you for your love, your patience, your beautiful smile, and every little way you care for me 🥹🌷💝 You
+            make my hard days easier, my good days brighter, and my future feel beautiful and full of hope ☀️💞 I’m so
+            grateful I’m with you, and forever I’d rather be with you and no one else 🫂💘
+          </p>
+          <p>
+            No matter what life brings, I promise to keep choosing you, loving you, protecting your heart, and standing
+            beside you 🤍🌹 You are my peace, my joy, my answered prayer, my soulmate, and my home 🏠💓♾️
+          </p>
+          <p class="signature">Signed: your hubby, your handsome D, D. Minto ❤️💋🌹</p>
+        </article>
+      </div>
+    </section>
+
+    <button id="musicToggle" class="music-toggle" type="button" aria-pressed="false">
+      🎵 Play our song
+    </button>
+    <p id="musicHint" class="music-hint">Tap once to start music for the whole site 💞</p>
+    <div id="youtubePlayer" aria-hidden="true"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
